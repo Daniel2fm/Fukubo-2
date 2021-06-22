@@ -1,0 +1,217 @@
+body {
+    background: #cbcbcbff; 
+}
+
+a {
+    text-decoration: none;
+    color: #111111;
+}
+
+/*Header particion*/
+
+.contenedor_header {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    border-bottom:  3px solid #a66f38ff;
+    grid-template-areas: "titulo logo menu";
+}
+
+.header-titulo{
+    font-size: 2em;
+    justify-self: center;
+    grid-area: titulo;
+}
+
+.header-titulo:hover{
+    color: #a99682ff;
+    opacity: 50%;
+    cursor: pointer;
+}
+
+.logo {
+    width: 150px;
+    margin: 5px;
+    justify-self: center;
+}
+
+.header-nav ul li{
+    display: inline;
+    padding: 0px 10px;
+}
+
+.header-nav li:hover {
+    border-bottom: 2px solid  #ffffff;
+    color: #a99682ff;
+    opacity: 50%;
+    cursor: pointer;
+}
+
+/*Contenido general*/
+.Recursos{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 90%;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 300px);
+    margin: 100px auto;
+    grid-template-areas: 
+    "EspL  EspL  EspL  EspS  EspS  EspS"
+    "EspC1 EspC1 EspC2 EspC2 EspC3 EspC3 ";
+    gap: 5px;
+}
+
+.libros{
+    width: 90%;
+    height: 90%;
+    background: #a99682ff;
+    grid-area: EspL;
+}
+
+.sitios{
+    width: 90%;
+    height: 90%;
+    background: #a99682ff;
+    grid-area: EspS;
+}
+
+.curso1{
+    width: 90%;
+    height: 90%;
+    background: #a99682ff;
+    grid-area: EspC1;
+}
+
+.curso2{
+    width: 90%;
+    height: 90%;
+    background: #a99682ff;
+    grid-area: EspC2;
+}
+
+.curso3{
+    width: 90%;
+    height: 90%;
+    background: #a99682ff;
+    grid-area: EspC3;
+}
+
+
+/*Footer perticion*/
+
+.contenerdor_footer {
+    background-color: #999999ff;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5px;
+    grid-template-areas: 
+    "logo logo logo dato1 dato1"
+    "logo logo logo dato2 dato2";
+    border-top:  3px solid #a66f38ff;
+}
+
+.logo-footer {
+    grid-area: logo;
+    width: 250px;
+    margin: 5px;
+    justify-self: center;
+}
+
+.dato1, .dato2{
+    margin: 15px;
+    color: white;
+}
+
+.dato1{
+    grid-area: dato1;
+}
+
+.dato2{
+    grid-area: dato2;
+}
+.dato2 a{
+    text-decoration: none;
+    color: white;
+}
+
+/*Formato celular*/
+
+@media only screen and (min-width: 250px) and (max-width: 609px) {
+   
+    /*Header particion*/
+
+    .contenedor_header{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header-titulo, .logo{
+        padding: 5px;
+    }
+
+    .header-nav ul li {
+        display: none;
+    }
+
+    /*Contenido general*/
+
+    .Recursos{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(5, 300px);
+        margin: 50px auto;
+        grid-template-areas: 
+        "EspL"
+        "EspS"
+        "EspC1"
+        "EspC2"
+        "EspC3";
+    }
+
+    /*Footer perticion*/
+    
+    .contenerdor_footer {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "logo"
+        "dato1"
+        "dato2";
+    }
+
+    .dato1, .dato2 {
+        text-align: center;
+    }
+}
+
+/*Formato tableta*/
+
+@media only screen and (min-width: 610px) and (max-width: 1000px) {
+
+    /*Header particion*/
+
+    .contenedor_header{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .header-nav ul li{
+        display: none;
+    }
+
+    /*Contenido general*/
+
+
+    /*Footer particion*/
+    
+    .contenerdor_footer{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, fr);
+    }
+
+    .logo-footer{
+        margin: 15px 0px;
+        grid-column: 1/span 2;
+        align-self: center;
+    }
+
+}
